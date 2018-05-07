@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost/todoapi');
+var url = process.env.databaseurl || "mongodb: //localhost/todoapi"
+mongoose.connect(url);
 
 mongoose.Promise = Promise;
 
